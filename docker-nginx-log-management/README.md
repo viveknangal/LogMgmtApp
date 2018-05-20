@@ -8,7 +8,7 @@ Another container having Fluentd installed is deployed to publish logs to AWS S3
 
 ## Prerequisite to run this Application
 * **Docker** and **docker-compose** should to be installed
-* **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** attributes should be provided in the docker-compose.yml.This is required for  publishing Nginx logs to AWS S3.
+* **AWS_ACCESS_KEY_ID** and **AWS_SECRET_ACCESS_KEY** environment variable values should be provided in the docker-compose.yml.This is required for  publishing Nginx logs to AWS S3.
 * Nginx application is exposed on host machine on port number 9000 ,accordingly this port need to be opened at the EC2 instance security group level for accessing the application
 
  ## Directory structure

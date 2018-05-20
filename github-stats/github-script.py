@@ -8,7 +8,6 @@ import sys
 
 # Global Variables
 github_api='https://api.github.com/repos/'
-output_file="repo_details.csv"
 all_repo_entries=[]
 
 # Function to validate the command line arguments
