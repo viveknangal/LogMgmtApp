@@ -1,0 +1,20 @@
+version: "2.2"
+services:
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "9000:80"
+  fluentd:
+    build:
+      context: ./fluentd/
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      AWS_REGION: "eu-central-1"
+      AWS_ACCESS_KEY_ID: "XXXXXXXXXXXXXXXXXXXXXX"
+      AWS_SECRET_ACCESS_KEY: "YYYYYYYYYYYYYYYYYYYYYYY"
+    volumes:
+      - /var/lib/docker/containers/:/app
