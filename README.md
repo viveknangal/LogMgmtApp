@@ -1,1 +1,1 @@
-# honestbee2018
+# Sample Go App 
