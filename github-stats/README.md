@@ -12,13 +12,13 @@ Refer below snippet on how to pass command line argument & mount directory.
  ## How to Build Docker Image
 Run the **docker build** from the same directory which has the Dockerfile
 ```
-docker build --no-cache -t honestbee:latest .
+docker build --no-cache -t bee:latest .
 ```
 
 ## How to use this Docker Image
 
 ```sh
-$ docker run -e input_file_name=input.txt -e output_file_name=output.csv -v "$(pwd)":/app honestbee:latest
+$ docker run -e input_file_name=input.txt -e output_file_name=output.csv -v "$(pwd)":/app bee:latest
 ```
 #### Docker **Run** command make use of below command line options:
 * Environment variable(-e)
