@@ -3,7 +3,9 @@
 name: first
 
 # Controls when the action will run. 
-on: push
+on: 
+  push:
+    branches: [master]
   # Triggers the workflow on push or pull request events but only for the master branch
   # push:
   #   branches: [ master ]
@@ -48,6 +50,13 @@ jobs:
             nproc
             cat /etc/*rele*
             ps -ef
+  job3:
+    needs: [job1,job2]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Step one
+      run: |
+          echo "running job 3"
 
  
   # This workflow contains a single job called "build"
