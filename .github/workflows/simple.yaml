@@ -2,13 +2,13 @@ name: Shell Commands
 
 on: [push]
 env:
-   env: stage
+   envName: stage
 jobs:
   run-shell-command:
      runs-on: ubuntu-latest
      steps:
        - name: echo a string
-         run: echo "Env name= ${env}"
+         run: echo "Env name= ${envName}"
        - name: multi line 
          run: | 
            hostname
