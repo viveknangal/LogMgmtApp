@@ -13,4 +13,9 @@ jobs:
            who-to-greet: 'Mona the Octocat'
        - name: Log Greeting time
          run: echo "${{ steps.greet.outputs.time}}"
+       - name: Hello world action step
+         id: hello
+         uses: ./.github/actions/validate
+         with:
+           who-to-greet: 'Vivek the Octocat'
 
