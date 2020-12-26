@@ -9,6 +9,8 @@ jobs:
      env:
        envName: stage
      steps:
+       - name: print secret
+         run: ${{ secets.API_KEY_TEST }}
        - name: echo a string
          run: echo "Env name= ${envName}"
        - name: multi line 
@@ -21,7 +23,7 @@ jobs:
        envName: stage
      steps:
        - name: print all env
-         run: env
+         run: env|sort
        - name: print GIT variale env
          run: |
            echo "home = ${HOME}"
