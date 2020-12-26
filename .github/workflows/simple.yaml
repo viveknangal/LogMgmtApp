@@ -15,3 +15,15 @@ jobs:
          run: | 
            hostname
            env|sort
+  log-default-env:
+     runs-on: ubuntu-latest
+     env:
+       envName: stage
+     steps:
+       - name: print all env
+         run: env
+       - name: print GIT variale env
+         run: |
+           echo "home = ${HOME}"
+           echo "EF_ENV= ${EF_ENV}"
+           echo "GITHUB_REF= ${GITHUB_REF}"    
