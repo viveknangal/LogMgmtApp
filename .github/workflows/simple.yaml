@@ -6,8 +6,8 @@ jobs:
   run-shell-command:
      runs-on: ubuntu-latest
      steps:
-       - name: eco a string
-         run: echo "hello world"
+       - name: echo a string
+         run: eco "hello world"
        - name: multi line 
          run: | 
            hostname
