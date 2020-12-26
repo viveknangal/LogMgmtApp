@@ -31,8 +31,6 @@ jobs:
           date
           nproc
           cat /etc/*rele*
-          
-  
 
 
   job2:
