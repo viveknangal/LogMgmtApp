@@ -23,5 +23,3 @@ jobs:
            who-to-greet: 'Vivek the Octocat'
        - run: echo ${{ steps.hello.outputs.time }}
        - run: echo ${{ steps }}
-       - run: echo ${{ jobs }}
-
