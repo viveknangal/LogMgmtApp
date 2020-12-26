@@ -6,6 +6,9 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+       - uses: actions/checkout@v2
+         with:
+          ref: ${{ github.event.pull_request.head.sha }}
        - name: Simple JS action
          id: greet
          uses: actions/hello-world-javascript-action@main
