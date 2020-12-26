@@ -7,7 +7,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - name: echo a string
-         run: eco "hello world"
+         run: echo "hello world"
        - name: multi line 
          run: | 
            hostname
