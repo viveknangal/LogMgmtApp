@@ -13,46 +13,52 @@ jobs:
          run: echo "secret =${{ secrets.API_KEY_TEST }}"
        - name: echo a string
          run: echo "Env name= ${envName}"
+       - name: create file on runner
+         run: |
+           touch /tmp/errror.log errror.log
+           pwd
+           ls -l
+           df -h .
        - name: multi line 
          run: | 
            hostname
            env|sort
-  log-default-env:
-     runs-on: ubuntu-latest
-     env:
-       envName: stage
-     steps:
-       - name: print all env
-         run: env|sort
-       - name: print GIT variale env
-         run: |
-           echo "home = ${HOME}"
-           echo "EF_ENV= ${EF_ENV}"
-           echo "GITHUB_REF= ${GITHUB_REF}"   
-  oneContext:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT" 
+  # log-default-env:
+  #    runs-on: ubuntu-latest
+  #    env:
+  #      envName: stage
+  #    steps:
+  #      - name: print all env
+  #        run: env|sort
+  #      - name: print GIT variale env
+  #        run: |
+  #          echo "home = ${HOME}"
+  #          echo "EF_ENV= ${EF_ENV}"
+  #          echo "GITHUB_REF= ${GITHUB_REF}"   
+  # oneContext:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Dump GitHub context
+  #       env:
+  #         GITHUB_CONTEXT: ${{ toJson(github) }}
+  #       run: echo "$GITHUB_CONTEXT"
+  #     - name: Dump job context
+  #       env:
+  #         JOB_CONTEXT: ${{ toJson(job) }}
+  #       run: echo "$JOB_CONTEXT"
+  #     - name: Dump steps context
+  #       env:
+  #         STEPS_CONTEXT: ${{ toJson(steps) }}
+  #       run: echo "$STEPS_CONTEXT"
+  #     - name: Dump runner context
+  #       env:
+  #         RUNNER_CONTEXT: ${{ toJson(runner) }}
+  #       run: echo "$RUNNER_CONTEXT"
+  #     - name: Dump strategy context
+  #       env:
+  #         STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+  #       run: echo "$STRATEGY_CONTEXT"
+  #     - name: Dump matrix context
+  #       env:
+  #         MATRIX_CONTEXT: ${{ toJson(matrix) }}
+  #       run: echo "$MATRIX_CONTEXT" 
